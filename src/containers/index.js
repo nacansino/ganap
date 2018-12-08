@@ -8,6 +8,15 @@ const theme = createMuiTheme({
     // In Japanese the characters are usually larger.
     fontSize: 16,
   },
+  palette: {
+    type: "dark",
+    primary: {
+      main: '#000000'
+    },
+    secondary: {
+      main: '#ab47bc'
+    },
+  },
 });
 
 class Containers extends Component {

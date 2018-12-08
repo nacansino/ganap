@@ -60,8 +60,7 @@ const renderSuggestion = suggestion => (
 
 const styles = theme => ({
   root: {
-    height: 250,
-    width: '30vw',
+    width: '40vw',
   },
   container: {
     position: 'relative',
