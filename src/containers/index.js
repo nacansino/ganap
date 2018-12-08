@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import Home from './Home'
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
+import {MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    // In Japanese the characters are usually larger.
+    fontSize: 16,
+  },
+});
 
 class Containers extends Component {
   render() {
     return (
       <BrowserRouter>
-        <Switch>
-          <Route exact path='/' render={() => <Home />} />
-        </Switch>
+        <MuiThemeProvider theme={theme}>
+          <Switch>
+            <Route exact path='/' render={() => <Home />} />
+          </Switch>
+        </MuiThemeProvider>
       </BrowserRouter>
     );
   }
