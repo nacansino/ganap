@@ -61,7 +61,7 @@ const renderSuggestion = suggestion => (
 const styles = theme => ({
   root: {
     height: 250,
-    flexGrow: 1,
+    width: '30vw',
   },
   container: {
     position: 'relative',
@@ -133,7 +133,7 @@ class MainSearch extends React.Component {
     // Autosuggest will pass through all these props to the input.
     const inputProps = {
       classes,
-      placeholder: 'Type a programming language',
+      placeholder: 'Artist, Events, Venues, etc ',
       value,
       onChange: this.onChange
     };

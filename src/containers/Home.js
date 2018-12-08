@@ -25,14 +25,11 @@ class Home extends Component {
     return (
       <div className={classes.root}>
         <div className={classes.sub1}>
-          Search your Favorite Artist, Genre, Event, Etc
+          Ganap.ph
         </div>
         {/*flextimer container below*/}
         <div className={classes.sub1}>
           <MainSearch />
-        </div>
-        <div className={classes.sub1}>
-          <SearchSample />
         </div>
       </div>
     );
