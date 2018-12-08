@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
+import MainSearch from "../components/MainSearch"
+import SearchSample from "../components/Search_Sample1"
 
 const styles = {
   root: {
@@ -23,11 +25,14 @@ class Home extends Component {
     return (
       <div className={classes.root}>
         <div className={classes.sub1}>
-          hello
+          Search your Favorite Artist, Genre, Event, Etc
         </div>
         {/*flextimer container below*/}
         <div className={classes.sub1}>
-          hello
+          <MainSearch />
+        </div>
+        <div className={classes.sub1}>
+          <SearchSample />
         </div>
       </div>
     );
