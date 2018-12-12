@@ -15,9 +15,9 @@ const styles = theme => ({
     alignItems: 'center',
     height: '100vh',
     width: '100vw',
-    background: 'url(' + BgImg + ')',
+    background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0) 100%),url(' + BgImg + ')',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'auto',
+    backgroundSize: 'cover',
   },
   searchPanel: {
     display: 'flex',
@@ -28,11 +28,11 @@ const styles = theme => ({
     width: '66vw',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderRadius: '10px',
+    borderColor: '#FFFFFF',
+    borderStyle: 'solid',
   },
   searchResultBody: {
-    width: '100vw',
-    height: '50vh',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    width: '90vw',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
@@ -53,7 +53,7 @@ class Home extends Component {
     return (
       <div className={classes.root}>
         <div className={classes.searchPanel}>
-          <Typography component="h1" variant="h2" align="center" color="textPrimary">
+          <Typography classes={classes.searchPanel} component="h1" variant="h2" align="center" color="textPrimary">
             Ganap.
           </Typography>
           <Typography component="h1" variant="subtitle1" align="center" color="textSecondary" gutterBottom>

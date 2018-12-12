@@ -1,68 +1,78 @@
 import React, { Component } from 'react';
 import {withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import {tileData} from './tileData'
+import EventCard from './EventCard';
 
-//for card
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-//for grid
+//for gridList
 import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import IconButton from '@material-ui/core/IconButton';
-import StarBorderIcon from '@material-ui/icons/StarBorder';
-import {tileData} from './tileData'
+
+//for grid
+import Grid from '@material-ui/core/Grid';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
+import Paper from '@material-ui/core/Paper';
+
 
 const styles = theme => ({
   root: {
     display: 'flex',
-    flexDirection: 'row',
-    overflow: 'hidden',
+    flexDirection: 'column',
     justifyContent: 'flex-start',
+    alignItems: 'center',
+    borderColor: '#FFFFFF',
+    borderStyle: 'solid',
   },
-  gridList: {
-    flexWrap: 'nowrap',
-    // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-    transform: 'translateZ(0)',
+  gridRoot: {
+    direction: 'row',
+    justifyContent: 'flex-start',
+    borderColor: '#FFFFFF',
+    borderStyle: 'solid',
   },
-  card: {
-    maxWidth: 345,
+  title: {
+    color: theme.palette.textPrimary,
+  },
+  titleBar: {
+    background:
+      'linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
+  },
+  control: {
+    padding: theme.spacing.unit * 2,
   },
 });
 
 //This SearchResultBox can hold different types of cards
 //based on the search result
 class SearchResultBox extends Component {
+  state = {
+      spacing: '16',
+    };
+
+    handleChange = key => (event, value) => {
+     this.setState({
+       [key]: value,
+     });
+   };
+
   render() {
     const {classes} = this.props;
-
+    const { spacing } = this.state;
     return (
       <div className={classes.root}>
-        <GridList className={classes.gridList} cols={2.5}>
+        <Typography gutterBottom variant="h6" component="h2">
+          Artists related to %keyword%
+        </Typography>
+        <Grid container className={classes.gridRoot} spacing={8}>
           {tileData.map(tile => (
-            <GridListTile key={tile.img}>
-              <img src={tile.img} alt={tile.title} />
-              <GridListTileBar
-                title={tile.title}
-                classes={{
-                  root: classes.titleBar,
-                  title: classes.title,
-                }}
-                actionIcon={
-                  <IconButton>
-                    <StarBorderIcon className={classes.title} />
-                  </IconButton>
-                }
-              />
-            </GridListTile>
+            <Grid item>
+              <EventCard data={tile} />
+            </Grid>
           ))}
-        </GridList>
+        </Grid>
       </div>
     );
   }
