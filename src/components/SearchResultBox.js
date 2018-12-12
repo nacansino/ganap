@@ -30,8 +30,10 @@ const styles = theme => ({
   gridRoot: {
     direction: 'row',
     justifyContent: 'flex-start',
+    padding: theme.spacing.unit*2,
     borderColor: '#FFFFFF',
     borderStyle: 'solid',
+    flexShrink: 0,
   },
   title: {
     color: theme.palette.textPrimary,
@@ -66,6 +68,13 @@ class SearchResultBox extends Component {
         <Typography gutterBottom variant="h6" component="h2">
           Artists related to %keyword%
         </Typography>
+        <Grid container className={classes.gridRoot} spacing={8}>
+          {tileData.map(tile => (
+            <Grid item>
+              <EventCard data={tile} />
+            </Grid>
+          ))}
+        </Grid>
         <Grid container className={classes.gridRoot} spacing={8}>
           {tileData.map(tile => (
             <Grid item>
