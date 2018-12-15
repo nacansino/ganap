@@ -27,8 +27,8 @@ const styles = theme => ({
     width: '66vw',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderRadius: '10px',
-    borderColor: '#FFFFFF',
-    borderStyle: 'solid',
+    //borderColor: '#FFFFFF',
+    //borderStyle: 'solid',
     flexShrink: 0,
   },
   searchResultBody: {
