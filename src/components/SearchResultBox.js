@@ -3,6 +3,7 @@ import {withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import {tileData} from './tileData'
 import EventCard from './EventCard';
+import ArtistCard from './ArtistCard';
 
 import Typography from '@material-ui/core/Typography';
 
@@ -66,17 +67,10 @@ class SearchResultBox extends Component {
         <Typography gutterBottom variant="h6" component="h2">
           Artists related to %keyword%
         </Typography>
-        <Grid container className={classes.gridRoot} spacing={8}>
+        <Grid container className={classes.gridRoot} spacing={24}>
           {tileData.map(tile => (
             <Grid item lg="auto">
-              <EventCard data={tile} />
-            </Grid>
-          ))}
-        </Grid>
-        <Grid container className={classes.gridRoot} spacing={8}>
-          {tileData.map(tile => (
-            <Grid item>
-              <EventCard data={tile} />
+              <ArtistCard data={tile} />
             </Grid>
           ))}
         </Grid>

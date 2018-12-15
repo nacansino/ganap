@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Home from './Home'
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
 import {MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
+import '../assets/fonts.css'
 
 const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
     // In Japanese the characters are usually larger.
     fontSize: 16,
+    fontFamily: 'Montserrat',
   },
   palette: {
     type: "dark",
