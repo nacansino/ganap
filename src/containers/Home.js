@@ -13,11 +13,11 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    height: '100vh',
     width: '100vw',
-    background: 'linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4) 70%, rgba(0,0,0,0) 100%),url(' + BgImg + ')',
+    backgroundColor: 'rgba(0,0,0,1)',
+    background: 'linear-gradient(to top,rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%),url(' + BgImg + ')',
     backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
   },
   searchPanel: {
     display: 'flex',
@@ -30,6 +30,7 @@ const styles = theme => ({
     borderRadius: '10px',
     borderColor: '#FFFFFF',
     borderStyle: 'solid',
+    flexShrink: 0,
   },
   searchResultBody: {
     width: '90vw',
@@ -37,8 +38,13 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
   },
+  mainSearch: {
+    display: 'flex',
+    flex: "1 0 auto",
+  },
   sub2: {
     display: 'flex',
+    flex: "1 0 auto",
     justifyContent: 'center',
   },
   divider: {
@@ -59,7 +65,7 @@ class Home extends Component {
           <Typography component="h1" variant="subtitle1" align="center" color="textSecondary" gutterBottom>
             Your local nightlife provider.
           </Typography>
-          <MainSearch />
+          <MainSearch className={classes.mainSearch}/>
         </div>
         <div className={classes.divider} />
         <div className={classes.searchResultBody}>

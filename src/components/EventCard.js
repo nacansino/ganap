@@ -29,30 +29,24 @@ const styles = theme => ({
   },
   cardContent:{
     display: 'flex',
-    flexGrow: 1,
+    flex: '0 1 auto',
     flexDirection: 'column',
-    borderColor: '#FFFFFF',
-    borderStyle: 'solid',
-    paddingLeft: theme.spacing.unit,
-    paddingBottom: theme.spacing.unit,
+    paddingLeft:theme.spacing.unit,
+    paddingTop: theme.spacing.unit,
   },
   date: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '10%',
-    borderColor: '#FFFFFF',
-    borderStyle: 'solid',
+    width: '15%',
   }
 });
-
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
 class EventCard extends Component {
 
   render() {
-    const {title,img,date} = this.props.data;
+    const {title,img,date,venue} = this.props.data;
     const {classes} = this.props;
     return (
     <Card className={classes.card}>
@@ -70,11 +64,14 @@ class EventCard extends Component {
             <Typography component="p">{date.toLocaleString('en-US', {day: '2-digit'})}</Typography>
           </div>
           <CardContent className={classes.cardContent}>
-            <Typography gutterBottom variant="h6" component="h2">
+            <Typography gutterBottom variant="h6">
               {title}
             </Typography>
             <Typography component="p">
-              {new Intl.DateTimeFormat('en-US', options).format(date)}
+              {new Intl.DateTimeFormat('en-US', { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric' }).format(date)}
+            </Typography>
+            <Typography component="p">
+              {venue}
             </Typography>
           </CardContent>
         </div>

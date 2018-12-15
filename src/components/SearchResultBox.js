@@ -24,15 +24,13 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    borderColor: '#FFFFFF',
-    borderStyle: 'solid',
+    //borderColor: '#FFFFFF',
+    //borderStyle: 'solid',
   },
   gridRoot: {
     direction: 'row',
     justifyContent: 'flex-start',
     padding: theme.spacing.unit*2,
-    borderColor: '#FFFFFF',
-    borderStyle: 'solid',
     flexShrink: 0,
   },
   title: {
@@ -70,7 +68,7 @@ class SearchResultBox extends Component {
         </Typography>
         <Grid container className={classes.gridRoot} spacing={8}>
           {tileData.map(tile => (
-            <Grid item>
+            <Grid item lg="auto">
               <EventCard data={tile} />
             </Grid>
           ))}
