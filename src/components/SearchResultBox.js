@@ -67,10 +67,17 @@ class SearchResultBox extends Component {
         <Typography gutterBottom variant="h6" component="h2">
           Artists related to %keyword%
         </Typography>
-        <Grid container className={classes.gridRoot} spacing={24}>
+        <Grid container className={classes.gridRoot} spacing={16}>
           {tileData.map(tile => (
             <Grid item lg="auto">
               <ArtistCard data={tile} />
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container className={classes.gridRoot} spacing={16}>
+          {tileData.map(tile => (
+            <Grid item lg="auto">
+              <EventCard data={tile} />
             </Grid>
           ))}
         </Grid>

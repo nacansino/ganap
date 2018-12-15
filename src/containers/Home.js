@@ -14,10 +14,8 @@ const styles = theme => ({
     justifyContent: 'flex-start',
     alignItems: 'center',
     width: '100vw',
-    height: '100vh',
     backgroundColor: 'rgba(0,0,0,1)',
-    background: 'linear-gradient(to top,rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%),url(' + BgImg + ')',
-    backgroundRepeat: 'no-repeat',
+    background: 'linear-gradient(to top,rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%),url(' + BgImg + ') no-repeat center center fixed',
     backgroundSize: 'cover',
   },
   searchPanel: {
