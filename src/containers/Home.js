@@ -36,6 +36,7 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-start',
+    padding: theme.spacing.unit*2,
   },
   mainSearch: {
     display: 'flex',
@@ -79,4 +80,4 @@ Home.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Home);
+export default withStyles(styles,{withTheme: true})(Home);

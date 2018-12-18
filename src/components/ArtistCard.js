@@ -24,7 +24,6 @@ const styles = theme => ({
   card: {
     width: 200,
     height: 300,
-    backgroundColor: 'transparent',
   },
   content: {
     display: 'flex',

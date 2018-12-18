@@ -21,7 +21,8 @@ const styles = theme => ({
     objectFit: 'cover',//cover all available space
   },
   card: {
-    width: 400,
+    minWidth: 220,
+    width: '90%',
     height: 300,
   },
   content: {

@@ -25,14 +25,15 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
+    padding: theme.spacing.unit*2,
     //borderColor: '#FFFFFF',
     //borderStyle: 'solid',
   },
   gridRoot: {
     direction: 'row',
-    justifyContent: 'flex-start',
     padding: theme.spacing.unit*2,
     flexShrink: 0,
+    outline: '1px solid red',
   },
   title: {
     color: theme.palette.textPrimary,
@@ -49,10 +50,6 @@ const styles = theme => ({
 //This SearchResultBox can hold different types of cards
 //based on the search result
 class SearchResultBox extends Component {
-  state = {
-      spacing: '16',
-    };
-
     handleChange = key => (event, value) => {
      this.setState({
        [key]: value,
@@ -60,23 +57,21 @@ class SearchResultBox extends Component {
    };
 
   render() {
-    const {classes} = this.props;
-    const { spacing } = this.state;
+    const {classes,theme} = this.props;
+    const gridObj = {
+      container: true,
+      justify: 'center',
+      className: classes.gridRoot,
+    };
+
     return (
       <div className={classes.root}>
         <Typography gutterBottom variant="h6" component="h2">
           Artists related to %keyword%
         </Typography>
-        <Grid container className={classes.gridRoot} spacing={16}>
+        <Grid {...gridObj}>
           {tileData.map(tile => (
-            <Grid item lg="auto">
-              <ArtistCard data={tile} />
-            </Grid>
-          ))}
-        </Grid>
-        <Grid container className={classes.gridRoot} spacing={16}>
-          {tileData.map(tile => (
-            <Grid item lg="auto">
+            <Grid item xs="12" sm="6" md="4" lg="3">
               <EventCard data={tile} />
             </Grid>
           ))}
@@ -90,4 +85,4 @@ SearchResultBox.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SearchResultBox);
+export default withStyles(styles,{withTheme: true})(SearchResultBox);
