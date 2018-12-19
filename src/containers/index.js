@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Home from './Home'
 import {Switch, Route, BrowserRouter} from 'react-router-dom'
-import {MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
+import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import '../assets/fonts.css'
 
 const theme = createMuiTheme({

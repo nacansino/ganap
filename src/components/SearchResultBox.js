@@ -7,16 +7,8 @@ import ArtistCard from './ArtistCard';
 
 import Typography from '@material-ui/core/Typography';
 
-//for gridList
-import GridList from '@material-ui/core/GridList';
-
 //for grid
 import Grid from '@material-ui/core/Grid';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import Radio from '@material-ui/core/Radio';
-import Paper from '@material-ui/core/Paper';
 
 
 const styles = theme => ({
@@ -30,10 +22,16 @@ const styles = theme => ({
     //borderStyle: 'solid',
   },
   gridRoot: {
-    direction: 'row',
+    display: 'flex',
     padding: theme.spacing.unit*2,
     flexShrink: 0,
     outline: '1px solid red',
+  },
+  gridItem:{
+    display: 'flex',
+    outline: '1px solid red',
+    justifyContent: 'center',
+    paddingBottom: theme.spacing.unit*2,
   },
   title: {
     color: theme.palette.textPrimary,
@@ -57,21 +55,23 @@ class SearchResultBox extends Component {
    };
 
   render() {
-    const {classes,theme} = this.props;
-    const gridObj = {
-      container: true,
-      justify: 'center',
-      className: classes.gridRoot,
-    };
+    const {classes} = this.props;
 
     return (
       <div className={classes.root}>
         <Typography gutterBottom variant="h6" component="h2">
           Artists related to %keyword%
         </Typography>
-        <Grid {...gridObj}>
-          {tileData.map(tile => (
-            <Grid item xs="12" sm="6" md="4" lg="3">
+        <Grid container className={classes.gridRoot}>
+          {tileData.map((tile,index) => (
+            <Grid key={index} item xs={12} sm={6} md={4} lg={3} className={classes.gridItem}>
+              <ArtistCard data={tile}/>
+            </Grid>
+          ))}
+        </Grid>
+        <Grid container className={classes.gridRoot}>
+          {tileData.map((tile,index) => (
+            <Grid key={index} item xs={12} sm={6} md={4} lg={3}>
               <EventCard data={tile} />
             </Grid>
           ))}

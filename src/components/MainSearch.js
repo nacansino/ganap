@@ -1,6 +1,5 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
-import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 

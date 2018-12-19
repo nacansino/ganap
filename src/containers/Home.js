@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MainSearch from "../components/MainSearch"
-import SearchSample from "../components/Search_Sample1"
 import Typography from '@material-ui/core/Typography'
 import {withStyles } from '@material-ui/core/styles';
 import BgImg from '../assets/images/bg.jpg';
