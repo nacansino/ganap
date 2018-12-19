@@ -58,7 +58,7 @@ class Home extends Component {
     return (
       <div className={classes.root}>
         <div className={classes.searchPanel}>
-          <Typography classes={classes.searchPanel} component="h1" variant="h2" align="center" color="textPrimary">
+          <Typography component="h1" variant="h2" align="center" color="textPrimary">
             Ganap.
           </Typography>
           <Typography component="h1" variant="subtitle1" align="center" color="textSecondary" gutterBottom>
