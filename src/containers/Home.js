@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import MainSearch from "../components/MainSearch"
 import Typography from '@material-ui/core/Typography'
-import {withStyles } from '@material-ui/core/styles';
-import BgImg from '../assets/images/bg.jpg';
+import Hidden from '@material-ui/core/Hidden'
+import {withStyles } from '@material-ui/core/styles'
+import BgImg from '../assets/images/bg.jpg'
 import SearchResultBox from '../components/SearchResultBox'
 
 const styles = theme => ({
@@ -22,13 +23,14 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '25vh',
+    height: 'auto',
     width: '66vw',
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderRadius: '10px',
     //borderColor: '#FFFFFF',
     //borderStyle: 'solid',
     flexShrink: 0,
+    padding: theme.spacing.unit*2,
   },
   searchResultBody: {
     width: '90vw',
@@ -36,6 +38,9 @@ const styles = theme => ({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     padding: theme.spacing.unit*2,
+  },
+  typog:{
+    fontSize: '5vw',
   },
   mainSearch: {
     display: 'flex',
@@ -58,12 +63,14 @@ class Home extends Component {
     return (
       <div className={classes.root}>
         <div className={classes.searchPanel}>
-          <Typography component="h1" variant="h2" align="center" color="textPrimary">
+          <Typography classes={{h2: classes.typog,}} component="h1" variant="h2" align="center" color="textPrimary">
             Ganap.
           </Typography>
-          <Typography component="h1" variant="subtitle1" align="center" color="textSecondary" gutterBottom>
-            Your local nightlife provider.
-          </Typography>
+          <Hidden smDown>
+            <Typography component="h1" variant="subtitle1" align="center" color="textSecondary" gutterBottom>
+              Your local nightlife provider.
+            </Typography>
+          </Hidden>
           <MainSearch className={classes.mainSearch}/>
         </div>
         <div className={classes.divider} />

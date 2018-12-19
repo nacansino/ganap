@@ -25,11 +25,9 @@ const styles = theme => ({
     display: 'flex',
     padding: theme.spacing.unit*2,
     flexShrink: 0,
-    outline: '1px solid red',
   },
   gridItem:{
     display: 'flex',
-    outline: '1px solid red',
     justifyContent: 'center',
     paddingBottom: theme.spacing.unit*2,
   },
